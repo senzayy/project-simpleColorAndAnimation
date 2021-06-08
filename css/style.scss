@@ -1,5 +1,16 @@
 $primary_color : white;
 
+@mixin smallCircle{
+    background-color : white;
+    height : 70px;
+    width : 70px;
+    border-radius : 100px;
+    position : absolute;
+    bottom : 20px;
+    left : 190px;
+    z-index : 10;
+}
+
 @keyframes colorChange{
     0% {background-color : rgb(102, 215, 209)};
     25% {background-color : rgb(167, 193, 244)};
@@ -8,10 +19,24 @@ $primary_color : white;
     100% {background-color : rgb(102, 215, 209)};
 }
 
-@keyframes lineChange{
-    0% {width : 150px;}
-    50% {width : 700px;}
-    100% {width : 150px;}
+@keyframes squareAnimation-right{
+    0% {left : 190px;}
+    100% {left : 630px;}
+}
+
+@keyframes squareAnimation-down{
+    0% {top : 34px;}
+    100% {top : 177px;}
+}
+
+@keyframes squareAnimation-up{
+    0% {bottom : 20px;}
+    100% {bottom : 163px;}
+}
+
+@keyframes squareAnimation-left{
+    0% {left : 190px;}
+    100% {left : -250px;}
 }
 
 *{
@@ -115,12 +140,11 @@ $primary_color : white;
 
 .animasi-wrapper{
     width : 100%;
-    height : 520px;
+    height : 480px;
     background-color : lightsalmon;
 
     .container{
         width: 100%;
-        height : 100%;
     }
 
     h3{
@@ -129,8 +153,38 @@ $primary_color : white;
 
     .col{
         background-color : lightblue;
-        padding : 60px;
+        padding : 70px;
         margin-left: 3px;
         margin-bottom : 3px;
-    }
+        position: relative;
+        
+        .small-circle{
+            @include smallCircle();
+            }
+
+            .right-dir{
+                 animation-name: squareAnimation-right;
+                 animation-duration: 2s;
+                 animation-iteration-count: infinite;
+            }
+
+            .down-dir{
+                animation-name: squareAnimation-down;
+                animation-duration: 2s;
+                animation-iteration-count: infinite;
+            }
+
+            .up-dir{
+                animation-name: squareAnimation-up;
+                animation-duration: 2s;
+                animation-iteration-count: infinite;
+            }
+
+            .left-dir{
+                animation-name : squareAnimation-left;
+                animation-duration: 2s;
+                animation-iteration-count: infinite;
+            }
+        }
+
 }
