@@ -1,0 +1,136 @@
+$primary_color : white;
+
+@keyframes colorChange{
+    0% {background-color : rgb(102, 215, 209)};
+    25% {background-color : rgb(167, 193, 244)};
+    50% {background-color : rgb(218, 227, 102)};
+    75% {background-color : rgb(254,160,150);}
+    100% {background-color : rgb(102, 215, 209)};
+}
+
+@keyframes lineChange{
+    0% {width : 150px;}
+    50% {width : 700px;}
+    100% {width : 150px;}
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.badan{
+    height : 100%;
+    width : 100%;
+    background-color: $primary_color;
+    text-align: center;
+}
+
+.animasi{
+    animation-name : colorChange;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+}
+
+.header{
+    width: 100%;
+    height : 520px;
+    position: relative;
+
+    .small-circle{
+        height : 5px;
+        width : 150px;
+        top : 50%;
+        left : 10px;
+        border-radius : 100px;
+        background-color : white;
+        position : absolute;
+        transition: all 1s;
+        animation-name : lineChange;
+        animation-duration : 4s;
+        animation-iteration-count: infinite;
+    }
+
+    h3{
+        font-family: 'Dancing Script', cursive;
+        font-size : 52px;
+        letter-spacing: 5px;
+        padding-top : 140px;
+        color : white;
+    }
+}
+
+.tengah-wrapper{
+    width : 100%;
+    padding-top : 50px;
+    padding-bottom : 130px;
+    background-color : #eee;
+
+    img, svg{
+        height : 50px;
+        width : 50px;
+    }
+
+    button{
+        margin-top: 20px;
+        margin-bottom : 35px;
+        margin-right : 10px;
+    }
+
+    h3{
+        font-family: 'Dancing Script', cursive;
+        font-size : 40px;
+        letter-spacing: 1px;
+        color : black;
+    }
+}
+
+
+.wrapper{
+    background-color : white;
+    margin : 0 auto;
+    height: 520px;
+    width : 95%;
+    padding : 20px;
+    border-radius: 30px 30px;
+    outline-style: double;
+
+    .col{
+        height : 100%;
+        width : 32%;
+        padding : 55px;
+        margin : 0 auto;
+        margin-bottom : 60px;
+        position:relative;
+
+        .hexa{
+            position : absolute;
+            left : 30%;
+            top : 120px;
+            font-size : 21px;
+            color : #3f3844;
+            font-family: "proxima-soft", "Proxima Soft", "Proxima Nova Soft", Helvetica, Arial, sans-serif;
+         }
+    }
+}
+
+.animasi-wrapper{
+    width : 100%;
+    height : 520px;
+    background-color : lightsalmon;
+
+    .container{
+        width: 100%;
+        height : 100%;
+    }
+
+    h3{
+        padding-top : 90px;
+    }
+
+    .col{
+        background-color : lightblue;
+        padding : 60px;
+        margin-left: 3px;
+        margin-bottom : 3px;
+    }
+}
