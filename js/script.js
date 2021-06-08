@@ -3,10 +3,6 @@ const bAcak = document.getElementById('bAcak');
 const bAcakLima = document.getElementById('bAcakLima');
 const line = document.getElementById('small-circle');
 
-line.addEventListener('unload', ()=>{
-    line.classList.add('small-circle');
-});
-
 function rng(){
     return Math.floor(Math.random() * 255 + 1);
 }
