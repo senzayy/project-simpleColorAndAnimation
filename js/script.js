@@ -186,7 +186,7 @@ function load(){
         animasiWrap.style.display = 'block';
 }
 
-body.addEventListener('onload', ()=>{
+function selesai(){
         setTimeout(load(), 2000);
 });
 
