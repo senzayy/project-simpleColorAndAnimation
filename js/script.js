@@ -2,6 +2,18 @@ const container = document.querySelector('.container');
 const bAcak = document.getElementById('bAcak');
 const bAcakLima = document.getElementById('bAcakLima');
 const line = document.getElementById('small-circle');
+const speedUpFast = document.getElementById('speedUpFast');
+const speedUpNormal = document.getElementById('speedUpNormal');
+const speedUpSlow = document.getElementById('speedUpSlow');
+const rClock = document.getElementById('rClock');
+const Clock = document.getElementById('Clock');
+const loader1 = document.getElementById('loader');
+const loader2 = document.getElementById('loader2');
+const loader3 = document.getElementById('loader3');
+const header = document.querySelector('.header');
+const tengahWrap = document.querySelector('.tengah-wrapper');
+const animasiWrap = document.querySelector('.animasi-wrapper');
+
 
 function rng(){
     return Math.floor(Math.random() * 255 + 1);
@@ -101,3 +113,80 @@ bAcak.addEventListener('click', ()=>{
     p9.innerHTML = 'RGB : '+r9+', '+g9+', '+b9+'';
 
 });
+
+const s1 = document.querySelectorAll('.small-circle')[0];
+const s2 = document.querySelectorAll('.small-circle')[1];
+const s3 = document.querySelectorAll('.small-circle')[2];
+const s4 = document.querySelectorAll('.small-circle')[3];
+const s5 = document.querySelectorAll('.small-circle')[4];
+const s6 = document.querySelectorAll('.small-circle')[5];
+
+speedUpFast.addEventListener('click', () =>{
+
+    const speed = '0.5s';
+
+    s1.style.animationDuration = speed;
+    s2.style.animationDuration = speed;
+    s3.style.animationDuration = speed;
+    s4.style.animationDuration = speed;
+    s5.style.animationDuration = speed;
+    s6.style.animationDuration = speed;
+});
+
+speedUpNormal.addEventListener('click', () =>{
+
+    const speed = '1s';
+
+    s1.style.animationDuration = speed;
+    s2.style.animationDuration = speed;
+    s3.style.animationDuration = speed;
+    s4.style.animationDuration = speed;
+    s5.style.animationDuration = speed;
+    s6.style.animationDuration = speed;
+});
+
+speedUpSlow.addEventListener('click', () =>{
+
+    const speed = '1.5s';
+
+    s1.style.animationDuration = speed;
+    s2.style.animationDuration = speed;
+    s3.style.animationDuration = speed;
+    s4.style.animationDuration = speed;
+    s5.style.animationDuration = speed;
+    s6.style.animationDuration = speed;
+});
+
+rClock.addEventListener('click', ()=>{
+    let dir = 'reverse';
+    s1.style.animationDirection = dir;
+    s2.style.animationDirection = dir;
+    s3.style.animationDirection = dir;
+    s4.style.animationDirection = dir;
+    s5.style.animationDirection = dir;
+    s6.style.animationDirection = dir;
+});
+
+Clock.addEventListener('click', ()=>{
+    let dir = 'normal';
+    s1.style.animationDirection = dir;
+    s2.style.animationDirection = dir;
+    s3.style.animationDirection = dir;
+    s4.style.animationDirection = dir;
+    s5.style.animationDirection = dir;
+    s6.style.animationDirection = dir;
+});
+
+function load(){
+        loader1.style.display = 'none';
+        loader2.style.display = 'none';
+        loader3.style.display = 'none';
+        header.style.display = 'block';
+        tengahWrap.style.display = 'block';
+        animasiWrap.style.display = 'block';
+}
+
+body.addEventListener('onload', ()=>{
+        setTimeout(load(), 2000);
+});
+

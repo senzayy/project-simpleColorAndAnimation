@@ -1,15 +1,43 @@
 $primary_color : white;
+$colorG1 : #ABDAFC;
+$colorG2 : #C490D1;
+$bgColor : #ACACDE;
+$durasi : 1s;
+$load1 : 650px;
+$load2 : 720px;
+$load3 : 790px;
 
 @mixin smallCircle{
-    background-color : white;
+    background-color :white;
     height : 70px;
     width : 70px;
-    border-radius : 100px;
+    border-radius : 550px 550px;
     position : absolute;
     bottom : 20px;
     left : 190px;
     z-index : 10;
 }
+
+@mixin animasi{
+    animation-duration: $durasi;
+    animation-iteration-count: infinite;
+}
+
+@mixin loaderSet($left){
+    position: absolute;
+    background-color : rgb(107, 255, 173);
+    height : 40px;
+    width : 40px;
+    border-radius : 250px 250px;
+    left : $left;
+    top : 380px;
+    z-index : 1;
+
+    animation-name : glow;
+    animation-duration : 1.5s;
+    animation-iteration-count: infinite;
+}
+
 
 @keyframes colorChange{
     0% {background-color : rgb(102, 215, 209)};
@@ -39,6 +67,12 @@ $primary_color : white;
     100% {left : -250px;}
 }
 
+@keyframes glow{
+    0% {background-color: rgb(107, 255, 173);}
+    60% {background-color: rgb(164, 172, 255);}
+    100% {background-color: rgb(107, 255, 173);}
+}
+
 *{
     box-sizing: border-box;
 }
@@ -48,7 +82,23 @@ $primary_color : white;
     width : 100%;
     background-color: $primary_color;
     text-align: center;
+    background-color : whitesmoke;
 }
+
+#loader{
+    @include loaderSet($load1);
+}
+
+#loader2{
+    @include loaderSet($load2);
+    animation-delay: 0.75s;
+}
+
+#loader3{
+    @include loaderSet($load3);
+}
+
+
 
 .animasi{
     animation-name : colorChange;
@@ -60,6 +110,7 @@ $primary_color : white;
     width: 100%;
     height : 520px;
     position: relative;
+    display : none;
 
     .small-circle{
         height : 5px;
@@ -77,10 +128,17 @@ $primary_color : white;
 
     h3{
         font-family: 'Dancing Script', cursive;
+        display : inline-block;
         font-size : 52px;
         letter-spacing: 5px;
-        padding-top : 140px;
+        margin-top : 140px;
         color : white;
+        transition : all 1s;
+
+        &:hover{
+            transition: all 1s;
+            font-size : 72px;
+        }
     }
 }
 
@@ -89,11 +147,7 @@ $primary_color : white;
     padding-top : 50px;
     padding-bottom : 130px;
     background-color : #eee;
-
-    img, svg{
-        height : 50px;
-        width : 50px;
-    }
+    display : none;
 
     button{
         margin-top: 20px;
@@ -107,84 +161,103 @@ $primary_color : white;
         letter-spacing: 1px;
         color : black;
     }
-}
 
-
-.wrapper{
-    background-color : white;
-    margin : 0 auto;
-    height: 520px;
-    width : 95%;
-    padding : 20px;
-    border-radius: 30px 30px;
-    outline-style: double;
-
-    .col{
-        height : 100%;
-        width : 32%;
-        padding : 55px;
+    .wrapper{
+        background-color : white;
         margin : 0 auto;
-        margin-bottom : 60px;
-        position:relative;
-
-        .hexa{
-            position : absolute;
-            left : 30%;
-            top : 120px;
-            font-size : 21px;
-            color : #3f3844;
-            font-family: "proxima-soft", "Proxima Soft", "Proxima Nova Soft", Helvetica, Arial, sans-serif;
-         }
+        height: 520px;
+        width : 95%;
+        padding : 20px;
+        border-radius: 30px 30px;
+        outline-style: double;
+    
+        .col{
+            height : 100%;
+            width : 32%;
+            padding : 55px;
+            margin : 0 auto;
+            margin-bottom : 60px;
+            position:relative;
+            outline-style: dotted;
+    
+            .hexa{
+                position : absolute;
+                left : 30%;
+                top : 120px;
+                font-size : 21px;
+                color : #3f3844;
+                font-family: "proxima-soft", "Proxima Soft", "Proxima Nova Soft", Helvetica, Arial, sans-serif;
+             }
+        }
     }
 }
 
+
+
+
 .animasi-wrapper{
     width : 100%;
-    height : 480px;
-    background-color : lightsalmon;
+    height : 670px;
+    background-color : $bgColor;
+    display : none;
 
     .container{
         width: 100%;
     }
 
     h3{
-        padding-top : 90px;
+        padding-top : 40px;
+        padding-bottom: 50px;
+        font-family: 'Dancing Script', cursive;
+        font-size : 40px;
+        letter-spacing: 1px;
+        color : black;
     }
 
     .col{
-        background-color : lightblue;
         padding : 70px;
         margin-left: 3px;
         margin-bottom : 3px;
         position: relative;
         
-        .small-circle{
+         .small-circle{
             @include smallCircle();
             }
 
             .right-dir{
                  animation-name: squareAnimation-right;
-                 animation-duration: 2s;
-                 animation-iteration-count: infinite;
+                 @include animasi();
             }
 
             .down-dir{
                 animation-name: squareAnimation-down;
-                animation-duration: 2s;
-                animation-iteration-count: infinite;
+                @include animasi();
             }
 
             .up-dir{
                 animation-name: squareAnimation-up;
-                animation-duration: 2s;
-                animation-iteration-count: infinite;
+                @include animasi();
             }
 
             .left-dir{
                 animation-name : squareAnimation-left;
-                animation-duration: 2s;
-                animation-iteration-count: infinite;
+                @include animasi();
             }
+
         }
+
+    .clock{
+        margin-top : 15px;
+        margin-bottom: 25px;
+    }
+
+    .g1{
+        background-color : $colorG1;
+      }
+
+      .g2{
+          background-color : $colorG2;
+      }
+
 
 }

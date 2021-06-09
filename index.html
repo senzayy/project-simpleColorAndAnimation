@@ -11,6 +11,9 @@
     <title>Color</title>
 </head>
 <body class="badan">
+    <div id="loader"></div>
+    <div id="loader2"></div>
+    <div id="loader3"></div>
     <div class="header animasi">
         <h3>Simple Colors Generator <br>and <br>Simple Animations </h3>
     </div>
@@ -33,17 +36,23 @@
     </div>
 
     <div class="animasi-wrapper">
-        <h3>Animasi</h3>
+        <h3>Animation</h3>
+        <button type="button" id="speedUpSlow" class="btn btn-primary">0.5x speed</button>
+        <button type="button" id="speedUpNormal" class="btn btn-primary">Normal speed</button>
+        <button type="button" id="speedUpFast" class="btn btn-primary">2x speed</button>
+        <br>
+        <button type="button" id="rClock" class="btn btn-primary clock">Reverse Clockwise</button>
+        <button type="button" id="Clock" class="btn btn-primary clock">Clockwise</button>
         <div class="container">
             <div class="row">
-              <div class="col"><p class="small-circle right-dir"></p></div>
-              <div class="col"><p class="small-circle right-dir"></p></div>
-              <div class="col"><p class="small-circle down-dir"></p></div>
+              <div class="col g1"><p class="small-circle right-dir"></p></div>
+              <div class="col g2"><p class="small-circle right-dir"></p></div>
+              <div class="col g1"><p class="small-circle down-dir"></p></div>
             </div>
             <div class="row">
-                <div class="col"><p class="small-circle up-dir"></p></div>
-                <div class="col"><p class="small-circle left-dir"></p></div>
-                <div class="col"><p class="small-circle left-dir"></p></div>
+                <div class="col g2"><p class="small-circle up-dir"></p></div>
+                <div class="col g1"><p class="small-circle left-dir"></p></div>
+                <div class="col g2"><p class="small-circle left-dir"></p></div>
             </div>
           </div>
     </div>
