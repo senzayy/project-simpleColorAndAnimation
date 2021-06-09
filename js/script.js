@@ -189,4 +189,3 @@ function load(){
 function selesai(){
         setTimeout(load(), 2000);
 };
-
